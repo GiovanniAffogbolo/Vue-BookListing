@@ -1,0 +1,42 @@
+<template>
+  <div>
+    <form class="" action="#" method="post" v-on:submit.prevent="bookSubmit()">
+      <input
+        type="text"
+        name="title"
+        value=""
+        v-model="bookTitle"
+        placeholder="Book Title"
+      />
+      <input
+        type="text"
+        name="author"
+        value=""
+        v-model="bookAuthor"
+        placeholder="Book Author"
+      />
+      <button type="submit" name="button">Add Book</button>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "BookForm",
+  props: ["books"],
+  data() {
+    return {
+      bookTitle: "",
+      bookAuthor: "",
+    };
+  },
+  methods: {
+    bookSubmit(bookTitle, bookAuthor) {
+      this.$emit("addBook", bookTitle, bookAuthor);
+    },
+  },
+};
+</script>
+
+<style scoped>
+</style>
