@@ -9,11 +9,7 @@
 <script>
 export default {
   name: "BookItem",
-  props: {
-    book: {
-      type: String,
-    },
-  },
+  props: ['book']
 };
 </script>
 
